@@ -1,0 +1,134 @@
+@import "variables";
+@import "base";
+
+h1 {
+  font-size: 5em;
+  text-transform: uppercase;
+  color: #fff;
+  span { font-size: 0.7em; }
+}
+
+ul { margin: 0; }
+
+img { display: block; }
+
+button {
+  &.button-purple {
+    color: #fff;
+    box-shadow: 0 0 5px 2.5px rgba(#000, 0.05);
+    background-color: darkorchid;
+    border: 0.2em solid rgba(#fff, 0.3);
+  }
+}
+
+body {
+  background-image: url("./assets/Flat-Mountains.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
+}
+
+#container {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+header {
+  text-align: center;
+  padding-top: 2em;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em 0;
+}
+
+ul#category-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0.25em 0;
+  margin-bottom: 0.5em;
+  background-color: $orange;
+  width: 100%;
+  z-index: 1;
+  > li {
+    margin: 0 1em;
+    button {
+      font-size: 2.5em;
+      opacity: 0.2;
+      $speed: .1s;
+      transition: opacity $speed ease-out, transform $speed ease-out;   
+      &:focus {                           
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+    &.active, &:hover {
+      button {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+#content {
+  width: 800px;
+  max-width: 100%;
+  background-color: #fff;
+  padding: 1.5em 1.5em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 10px 5px rgba(#000, 0.05);
+}
+
+#loading {
+  text-align: center;
+  padding: 1em 0;
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  &.hidden { display: none; }
+  > span {
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(-60deg); }
+  100% { transform: rotate(300deg); }
+}
+
+button#button-load-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  $buttonheight: 3em;
+  height: $buttonheight;
+  border-radius: ($buttonheight / 2);
+  padding: 0 2em;
+  visibility: hidden;
+  margin-top: 1em;
+  transition: transform .1s ease-out;
+  &.shown { visibility: visible; }
+  &:hover, &:focus { transform: scale(1.1); }
+}
+
+@media screen and (max-width: 750px) {
+  ul#category-list {
+    > li {
+      button {
+        font-size: 1.5em;
+      }
+    }
+  }
+} 

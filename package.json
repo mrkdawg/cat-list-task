@@ -1,0 +1,22 @@
+{
+  "name": "parcel-testing",
+  "version": "1.0.2",
+  "description": "",
+  "main": "src/index.html",
+  "scripts": {
+    "dev": "parcel src/index.html --open",
+    "build": "parcel build src/index.html --public-url ./"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "parcel-bundler": "^1.12.3",
+    "sass": "^1.32.8"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "whatwg-fetch": "^3.6.2"
+  }
+}

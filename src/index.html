@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cool Cats</title>
+  <link rel="icon" href="./assets/cat-emoji.png">
+  <link rel="stylesheet" href="./styles.scss">
+</head>
+<body>
+  <div id="app">
+
+    <div id="container">
+      <header>
+        <h1>🐈</h1>
+      </header>
+
+      <main>
+        <ul id="category-list">
+          <li><button data-cat="1">🎩</button></li>
+          <li><button data-cat="2">🚀</button></li>
+          <li class="active"><button data-cat="4">👓</button></li>
+          <li><button data-cat="5">📦</button></li>
+          <li><button data-cat="7">👔</button></li>
+          <li><button data-cat="14">🛁</button></li>
+          <li><button data-cat="15">👚</button></li>
+        </ul>
+
+        <div id="content">
+          <ul id="cat-list"></ul>
+          <div id="loading"><span>😻</span></div>
+        </div>
+
+        <button id="button-load-more" class="button-purple">More...</button>
+      </main>
+    </div>
+
+    <div id="image-modal"></div>
+
+  </div>
+  <script src="./main.js"></script>
+</body>
+</html>

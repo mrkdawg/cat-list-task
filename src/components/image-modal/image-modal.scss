@@ -1,0 +1,57 @@
+#image-modal {
+  position: fixed;
+  left: 0; top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(#000, 0.8);
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  $speed: .1s;
+  transition: opacity $speed ease-out, visibility $speed ease-out;
+  img {
+    transition: transform $speed ease-out;
+    transform: scale(0.8);
+  }
+  &.shown {
+    visibility: visible;
+    opacity: 1;
+    img { transform: scale(1); }
+  }
+}
+
+$headerheight: 5em;
+#image-modal-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: $headerheight;
+  padding: 1em 2em;
+  button {
+    $buttonsize: 3em;
+    width: $buttonsize;
+    height: $buttonsize;
+    border-radius: ($buttonsize / 2);
+    background-image: url("../../assets/close.svg");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;
+  }
+}
+
+#image-modal-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  height: calc(100vh - #{$headerheight});
+  img {
+    margin-bottom: 4em;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 0.5em;
+    box-shadow: 0 0 10px 5px rgba(#000, 0.05);
+  }
+}

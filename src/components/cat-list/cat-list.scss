@@ -1,0 +1,50 @@
+@import "../../variables";
+
+ul#cat-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+  > li {
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(#000, 0.03);
+    padding: 1em 1em;
+    border-radius: 0.25em;
+    &:not(:nth-last-child(1), :nth-last-child(2), :nth-last-child(3), :nth-last-child(4)) { margin-bottom: 0.6em; }
+    cursor: pointer;
+    $speed: .1s;
+    transition: transform $speed ease-out, background-color $speed ease-out;
+    &:hover, &:focus {
+      transform: scale(1.05);
+      background-color: rgba(#000, 0.1);
+    }
+    &:active { transform: scale(0.95); }
+    .cat-item-thumbnail {
+      $thumbnailsize: 6em;
+      width: $thumbnailsize;
+      height: $thumbnailsize;
+      border-radius: ($thumbnailsize / 2);
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    p { margin-bottom: 0; }
+  }
+  > p { width: 100%; }
+}
+
+@media screen and (max-width: 750px) {
+  ul#cat-list {
+    > li {
+      width: 49%;
+      &:nth-last-child(3), &:nth-last-child(4) { margin-bottom: 0.6em; }
+    }
+  }
+} 
